@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 68" fill="none" class="w-auto h-full">
+  <defs>
+    <linearGradient id="aturGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="35%" stop-color="#2563EB"/>
+      <stop offset="70%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="aturGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized modern ribbon A mark -->
+  <g transform="translate(4, 4) scale(0.72)">
+    <path d="M42 12C44.5 12 46.8 13.3 48.1 15.6L72.2 59.8C74.4 63.8 71.5 68.8 66.9 68.8C64.2 68.8 61.7 67.3 60.4 64.9L52.1 49.3H31.9L23.6 64.9C22.3 67.3 19.8 68.8 17.1 68.8C12.5 68.8 9.6 63.8 11.8 59.8L35.9 15.6C37.2 13.3 39.5 12 42 12Z" fill="url(#aturGrad1)"/>
+    <path d="M42 24.5L51 41.5H33L42 24.5Z" fill="#FFFFFF"/>
+    <path d="M27.5 47H56.5C58.4 47 60 48.6 60 50.5C60 52.4 58.4 54 56.5 54H27.5C25.6 54 24 52.4 24 50.5C24 48.6 25.6 47 27.5 47Z" fill="url(#aturGrad2)" opacity="0.95"/>
+  </g>
+  <!-- Brand text ATUR -->
+  <text x="74" y="47" font-family="'Inter', sans-serif" font-size="36" font-weight="800" fill="#2563EB" letter-spacing="-0.5">ATUR</text>
+</svg>

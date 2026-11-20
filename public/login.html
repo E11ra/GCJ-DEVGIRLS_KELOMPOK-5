@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ATUR Platform Keuangan Mahasiswa</title>
+  
+  <link rel="icon" type="image/png" href="logo-atur.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS Stylesheet (Terpisah) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans min-h-screen bg-auth-canvas flex items-center justify-center p-4 sm:p-6 lg:p-8 selection:bg-blue-100 selection:text-blue-700">
+
+  <div class="max-w-[1440px] w-full mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[60px] my-auto">
+    
+    <!-- LEFT COLUMN: Form Login Card (Lebar 668px presisi sesuai gambar referensi 1440x1024) -->
+    <div class="w-full lg:w-[668px] max-w-[668px] flex-shrink-0">
+      <div class="bg-white rounded-[32px] px-6 sm:px-14 lg:px-[110px] py-12 sm:py-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.07)] border border-slate-200/90 w-full">
+        
+        <!-- Header -->
+        <h1 class="text-[28px] sm:text-[32px] font-bold text-slate-900 tracking-tight">
+          Selamat Datang di <span class="text-blue-600">ATUR</span>
+        </h1>
+        <p class="text-[14px] sm:text-[15px] text-slate-600 mt-2 mb-8">
+          Masuk untuk melanjutkan mengatur pos keuanganmu.
+        </p>
+
+        <!-- Form Fields -->
+        <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+          
+          <!-- Email Field -->
+          <div>
+            <label for="login-email" class="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5">
+              Email
+            </label>
+            <input 
+              type="email" 
+              id="login-email" 
+              placeholder="Example@email.com" 
+              required
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/30 focus:border-blue-600 transition-all bg-white"
+            >
+          </div>
+
+          <!-- Password Field with Visibility Toggle -->
+          <div>
+            <label for="login-password" class="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5">
+              Password
+            </label>
+            <div class="relative">
+              <input 
+                type="password" 
+                id="login-password" 
+                placeholder="Minimal 8 karakter" 
+                required
+                class="w-full pl-4 pr-11 py-2.5 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/30 focus:border-blue-600 transition-all bg-white"
+              >
+              <button 
+                type="button" 
+                onclick="togglePasswordVisibility('login-password', 'login-eye-icon')" 
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
+                title="Toggle visibility"
+              >
+                <!-- Eye-off icon (default hidden) -->
+                <svg id="login-eye-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Options Row: Remember Me & Lupa Password -->
+          <div class="flex items-center justify-between text-xs sm:text-sm pt-1">
+            <label class="flex items-center gap-2 cursor-pointer text-slate-600">
+              <input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+              <span>Remember me</span>
+            </label>
+            <a href="#" onclick="alert('Instruksi pemulihan kata sandi telah dikirim ke email Anda.'); return false;" class="text-blue-600 hover:text-blue-700 font-medium">
+              Lupa Password?
+            </a>
+          </div>
+
+          <!-- Primary Action: Masuk -->
+          <button 
+            type="submit" 
+            class="w-full mt-2 py-3 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-semibold rounded-xl transition shadow-md shadow-blue-500/20 text-sm sm:text-base cursor-pointer"
+          >
+            Masuk
+          </button>
+
+        </form>
+
+        <!-- Divider: atau -->
+        <div class="relative flex py-4 items-center">
+          <div class="flex-grow border-t border-slate-200"></div>
+          <span class="flex-shrink mx-4 text-xs text-slate-400">atau</span>
+          <div class="flex-grow border-t border-slate-200"></div>
+        </div>
+
+        <!-- Social Logins (3-Column Icon Grid) -->
+        <div class="grid grid-cols-3 gap-[10px]">
+          <!-- Google -->
+          <button onclick="alert('Menghubungkan ke Google Auth... Berhasil masuk!')" aria-label="Masuk dengan Google" title="Masuk dengan Google" class="w-full h-[54px] flex items-center justify-center bg-white hover:bg-slate-50 active:scale-[0.98] border border-slate-200 rounded-xl transition cursor-pointer">
+            <svg class="w-[22px] h-[22px] flex-shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </button>
+
+          <!-- Facebook -->
+          <button onclick="alert('Menghubungkan ke Facebook Auth... Berhasil masuk!')" aria-label="Masuk dengan Facebook" title="Masuk dengan Facebook" class="w-full h-[54px] flex items-center justify-center bg-[#1877F2] hover:bg-[#166fe5] active:scale-[0.98] text-white rounded-xl transition cursor-pointer">
+            <svg class="w-[22px] h-[22px] fill-current flex-shrink-0" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </button>
+
+          <!-- Apple -->
+          <button onclick="alert('Menghubungkan ke Apple ID... Berhasil masuk!')" aria-label="Masuk dengan Apple" title="Masuk dengan Apple" class="w-full h-[54px] flex items-center justify-center bg-black hover:bg-zinc-800 active:scale-[0.98] text-white rounded-xl transition cursor-pointer">
+            <svg class="w-[22px] h-[22px] fill-current flex-shrink-0" viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.78 1.06-1.85.94-2.94-1 .04-2.15.65-2.82 1.43-.59.68-1.11 1.77-.97 2.83 1.11.08 2.22-.54 2.85-1.32z"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Footer Link -->
+        <p class="text-center text-xs sm:text-sm text-slate-600 mt-6">
+          Belum punya akun? 
+          <a href="register.html" class="text-blue-600 hover:text-blue-700 font-semibold cursor-pointer">
+            Daftar
+          </a>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Branding & Isometric Banner -->
+    <div class="w-full lg:flex-1 flex flex-col justify-center max-w-[620px] mx-auto lg:mx-0">
+      <h2 class="text-[30px] sm:text-[36px] lg:text-[40px] font-extrabold text-slate-900 leading-[1.22] tracking-tight">
+        Atur Keuangan Kuliahmu,<br>
+        <span class="lg:whitespace-nowrap">Capai Impian Tanpa Cemas.</span>
+      </h2>
+      <p class="mt-5 text-slate-600 text-[15px] sm:text-[16px] leading-relaxed max-w-[520px]">
+        Platform pencatatan mandiri khusus mahasiswa. Pantau saldo siap belanja, amankan budget bulanan, dan kelola pos Saving Pocket tanpa ribet.
+      </p>
+
+      <!-- Isometric Visual Illustration -->
+      <div class="mt-8 flex justify-center items-center">
+        <img 
+          src="illustration-isometric-trans.png" 
+          alt="Ilustrasi Isometric ATUR" 
+          class="w-full max-w-[540px] h-auto object-contain select-none pointer-events-none drop-shadow-sm"
+        >
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (!input || !icon) return;
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.innerHTML = `
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        `;
+      } else {
+        input.type = 'password';
+        icon.innerHTML = `
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+        `;
+      }
+    }
+
+    function handleLoginSubmit(event) {
+      event.preventDefault();
+      alert('Login Berhasil! Selamat datang di ATUR.');
+      window.location.href = 'landing.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATUR - Atur Uangmu, Tenangkan Pikiranmu</title>
+  
+  <link rel="icon" type="image/png" href="logo-atur.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS Stylesheet (Terpisah) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans min-h-screen bg-canvas-gradient flex flex-col justify-between selection:bg-blue-100 selection:text-blue-700">
+
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-100/80 transition-all">
+    <div class="max-w-[1320px] mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Left: Logo ATUR (sudah termasuk tulisan ATUR) -->
+      <a href="landing.html" class="flex items-center group cursor-pointer">
+        <img src="logo-atur.png" alt="Logo ATUR" class="h-8 w-auto object-contain transition-transform group-hover:scale-105">
+      </a>
+
+      <!-- Center Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-slate-700">
+        <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+        <a href="#fitur" class="hover:text-blue-600 transition-colors">Fitur</a>
+        <a href="#about" class="hover:text-blue-600 transition-colors">About Us</a>
+      </nav>
+
+      <!-- Right Action Buttons -->
+      <div class="flex items-center gap-4">
+        <a href="login.html" class="text-[15px] font-medium text-slate-700 hover:text-blue-600 px-3 py-2 rounded-lg transition-colors cursor-pointer">
+          Login
+        </a>
+        <a href="register.html" class="text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 active:scale-[0.98] px-5 py-2 rounded-lg transition-all shadow-sm cursor-pointer">
+          Register
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-[1320px] mx-auto px-6 flex-grow w-full">
+
+    <!-- HERO SECTION WITH RIGHT SIDE ISOMETRIC ILLUSTRATION -->
+    <section id="home" class="pt-12 pb-16 md:pt-16 md:pb-24">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
+        
+        <!-- Left Side: Hero Text & Actions -->
+        <div class="w-full lg:w-[48%] max-w-xl flex-shrink-0">
+          <h1 class="text-[40px] sm:text-[48px] md:text-[54px] font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+            Atur Uangmu,Tenangkan<br>Pikiranmu!
+          </h1>
+          <p class="mt-6 text-slate-600 text-base md:text-[17px] leading-relaxed max-w-xl">
+            Catat pemasukan, pantau pengeluaran, susun anggaran, dan wujudkan tujuan menabung dalam satu tempat yang jernih dan dirancang khusus untuk mahasiswa.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a href="register.html" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-semibold text-sm md:text-base px-7 py-3.5 rounded-xl transition-all shadow-sm shadow-blue-500/20 cursor-pointer">
+              Mulai Atur Keuangan
+            </a>
+            <a href="#fitur" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 active:scale-[0.98] border border-slate-200 text-slate-700 font-medium text-sm md:text-base px-7 py-3.5 rounded-xl transition-all cursor-pointer">
+              Lihat Fitur
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Hero Isometric Illustration (Matching Landing_Page__1__a9459e13.png) -->
+        <div class="w-full lg:w-[52%] flex justify-center lg:justify-end">
+          <img 
+            src="illustration-isometric-trans.png" 
+            alt="Ilustrasi Isometric ATUR" 
+            class="w-full max-w-[620px] lg:max-w-[700px] xl:max-w-[740px] h-auto object-contain select-none pointer-events-none drop-shadow-sm"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: FITUR UTAMA -->
+    <section id="fitur" class="py-14 md:py-20">
+      <div class="text-center">
+        <p class="text-[13px] md:text-[14px] font-bold tracking-wider text-blue-600 uppercase">
+          FITUR UTAMA
+        </p>
+        <h2 class="mt-3 text-2xl md:text-[34px] font-extrabold text-slate-900 tracking-tight leading-snug">
+          Semua yang Kamu Butuhkan untuk<br>Mengatur Keuangan
+        </h2>
+      </div>
+
+      <!-- 4 Cards Grid (1 Row, 4 Columns on desktop) -->
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        
+        <!-- Card 1: Catat Pemasukan & Pengeluaran -->
+        <div class="bg-white rounded-[28px] border border-slate-200/90 p-8 flex flex-col items-center text-center shadow-xs hover:shadow-md transition-all duration-300 group">
+          <h3 class="font-bold text-slate-900 text-base leading-snug h-12 flex items-center justify-center">
+            Catat Pemasukan &amp;<br>Pengeluaran
+          </h3>
+          <div class="my-8 flex items-center justify-center h-16 w-16">
+            <img src="feature-icon1.png" alt="Ikon Catat Pemasukan & Pengeluaran" class="h-14 w-auto object-contain transition-transform group-hover:scale-110">
+          </div>
+          <p class="text-xs md:text-[13px] text-slate-600 leading-relaxed">
+            Pencatatan manual yang cepat dan terstruktur. Pisahkan sumber uang saku, beasiswa, hingga gaji part-time secara instan.
+          </p>
+        </div>
+
+        <!-- Card 2: Atur Budget Bulanan -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-7 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group">
+          <h3 class="font-bold text-slate-900 text-base leading-snug h-12 flex items-center justify-center">
+            Atur Budget Bulanan
+          </h3>
+          <div class="my-8 flex items-center justify-center h-16 w-16">
+            <img src="feature-icon2.png" alt="Ikon Atur Budget Bulanan" class="h-14 w-auto object-contain transition-transform group-hover:scale-110">
+          </div>
+          <p class="text-xs md:text-[13px] text-slate-600 leading-relaxed">
+            Tetapkan batas maksimal tiap kategori pengeluaran agar uang bulanan tidak habis di pertengahan bulan karena impulsif.
+          </p>
+        </div>
+
+        <!-- Card 3: Pantau Analisis Pengeluaran -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-7 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group">
+          <h3 class="font-bold text-slate-900 text-base leading-snug h-12 flex items-center justify-center">
+            Pantau Analisis<br>Pengeluaran
+          </h3>
+          <div class="my-8 flex items-center justify-center h-16 w-16">
+            <img src="feature-icon3.png" alt="Ikon Pantau Analisis Pengeluaran" class="h-14 w-auto object-contain transition-transform group-hover:scale-110">
+          </div>
+          <p class="text-xs md:text-[13px] text-slate-600 leading-relaxed">
+            Grafik visual dan breakdown real-time untuk memahami secara presisi ke mana saja uangmu mengalir setiap periodenya.
+          </p>
+        </div>
+
+        <!-- Card 4: Saving Pocket -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-7 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group">
+          <h3 class="font-bold text-slate-900 text-base leading-snug h-12 flex items-center justify-center">
+            Saving Pocket
+          </h3>
+          <div class="my-8 flex items-center justify-center h-16 w-16">
+            <img src="feature-icon4.png" alt="Ikon Saving Pocket" class="h-14 w-auto object-contain transition-transform group-hover:scale-110">
+          </div>
+          <p class="text-xs md:text-[13px] text-slate-600 leading-relaxed">
+            Alokasikan pos tabungan impian seperti dana darurat, laptop baru, atau wisuda tanpa tercampur dengan saldo harian.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TENTANG KAMI -->
+    <section id="about" class="py-12 md:py-16">
+      <div class="text-center">
+        <p class="text-xs md:text-sm font-semibold tracking-wider text-blue-600 uppercase">
+          TENTANG KAMI
+        </p>
+        <h2 class="mt-2 text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+          Membantu Mahasiswa Menggapai Kemandirian Finansial
+        </h2>
+      </div>
+
+      <!-- Banner Card -->
+      <div class="mt-10 bg-white border border-slate-200 rounded-2xl md:rounded-3xl p-8 md:p-10 shadow-sm max-w-4xl mx-auto">
+        <div class="flex items-start gap-3">
+          <p class="text-xs md:text-[14px] text-slate-700 leading-relaxed">
+            <img src="logo-atur.png" alt="Logo ATUR" class="h-6 w-auto inline-block -mt-1 mr-1.5 align-middle">
+            adalah platform pengelolaan keuangan pribadi yang dirancang khusus untuk membantu mahasiswa membangun kebiasaan finansial yang lebih bijak dan teratur. Melalui fitur pencatatan pemasukan dan pengeluaran, perencanaan anggaran, analisis keuangan, serta Saving Pocket, ATUR memudahkan mahasiswa memahami ke mana uang mereka digunakan dan merencanakan tujuan menabung. Kami percaya bahwa mengelola keuangan tidak harus rumit. Bersama ATUR, setiap langkah kecil dalam mengatur uang menjadi awal menuju kebiasaan finansial yang lebih sehat, sadar, dan bertanggung jawab.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 border-t border-slate-200/80 bg-transparent">
+    <div class="max-w-[1320px] mx-auto px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <!-- Left: Logo & Tagline -->
+      <div>
+        <img src="logo-atur.png" alt="Logo ATUR" class="h-7 w-auto object-contain">
+        <p class="mt-2 text-xs text-slate-500 max-w-sm leading-relaxed">
+          Platform manajemen keuangan cerdas untuk mahasiswa. Atur uang saku, pantau pengeluaran, dan wujudkan tabungan mandiri.
+        </p>
+      </div>
+
+      <!-- Right: Navigation Links -->
+      <div class="flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+        <a href="#fitur" class="hover:text-blue-600 transition-colors">Fitur</a>
+        <a href="#about" class="hover:text-blue-600 transition-colors">About Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

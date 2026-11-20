@@ -1,0 +1,364 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   ATUR - SISTEM STYLING & BRAND THEME (index.css)
+   Aplikasi Pengelolaan Keuangan Pribadi Khusus Mahasiswa
+   ========================================================================== */
+
+/* --- Brand Variables & Root Tokens --- */
+:root {
+  --brand-primary: #2563EB;       /* Tailwind blue-600 */
+  --brand-hover: #1D4ED8;         /* Tailwind blue-700 */
+  --brand-light: #EFF6FF;         /* Tailwind blue-50 */
+  --brand-accent: #DBEAFE;        /* Tailwind blue-100 */
+  --dark-neutral: #0F172A;        /* Slate-900 */
+  --text-muted: #64748B;          /* Slate-500 */
+  --card-border: #E2E8F0;         /* Slate-200 */
+  --canvas-white: #FFFFFF;
+}
+
+/* --- Base & Typography --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--dark-neutral);
+  background-color: var(--canvas-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--brand-accent);
+  color: var(--brand-hover);
+}
+
+/* --- Canvas Gradient Backgrounds --- */
+.bg-canvas-gradient {
+  background: radial-gradient(circle at 85% 20%, rgba(219, 234, 254, 0.7) 0%, rgba(240, 247, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%),
+              linear-gradient(135deg, #FFFFFF 0%, #FAFDFE 40%, #F0F7FF 100%);
+}
+
+.bg-auth-canvas {
+  background: radial-gradient(circle at 82% 35%, rgba(219, 234, 254, 0.75) 0%, rgba(240, 247, 255, 0.4) 50%, rgba(255, 255, 255, 0) 80%),
+              linear-gradient(135deg, #FFFFFF 0%, #FAFCFF 35%, #F0F7FF 100%);
+}
+
+/* --- Layout Containers --- */
+.atur-container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* --- Navbar --- */
+.atur-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(241, 245, 249, 0.9);
+  transition: all 0.2s ease;
+}
+
+.atur-nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #334155;
+  transition: color 0.15s ease;
+  text-decoration: none;
+}
+.atur-nav-link:hover {
+  color: var(--brand-primary);
+}
+
+/* --- Auth Wrapper with EXACT 60px Gap (Mendekatkan Jarak sesuai Desain UI) --- */
+.atur-auth-wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media (min-width: 1024px) {
+  .atur-auth-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* Jarak presisi 60px antara card form dan kolom kanan */
+  }
+}
+
+/* --- Auth Form Card (Exact 668px Width) --- */
+.atur-auth-card {
+  width: 100%;
+  max-width: 668px;
+  background-color: #FFFFFF;
+  border-radius: 32px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.07);
+  flex-shrink: 0;
+}
+
+.atur-auth-card-login {
+  padding: 3rem 1.5rem;
+}
+@media (min-width: 640px) {
+  .atur-auth-card-login {
+    padding: 3.5rem 3.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .atur-auth-card-login {
+    padding: 4rem 110px; /* Padding horizontal 110px menghasilkan input 447px */
+  }
+}
+
+.atur-auth-card-register {
+  padding: 2.5rem 1.5rem;
+}
+@media (min-width: 640px) {
+  .atur-auth-card-register {
+    padding: 3rem 3.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .atur-auth-card-register {
+    padding: 3.25rem 110px;
+  }
+}
+
+/* --- Auth Right Column --- */
+.atur-auth-right {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.atur-auth-heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+@media (min-width: 640px) {
+  .atur-auth-heading {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .atur-auth-heading {
+    font-size: 40px;
+  }
+}
+
+.atur-auth-desc {
+  margin-top: 1.25rem;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.625;
+  max-width: 520px;
+}
+@media (min-width: 640px) {
+  .atur-auth-desc {
+    font-size: 16px;
+  }
+}
+
+/* --- Form Controls --- */
+.atur-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1E293B;
+  margin-bottom: 0.4rem;
+}
+
+.atur-input {
+  width: 100%;
+  height: 52px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
+  background-color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+}
+.atur-input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+.atur-input::placeholder {
+  color: #94A3B8;
+}
+
+.atur-input-compact {
+  height: 48px;
+}
+
+/* --- Buttons --- */
+.atur-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  background-color: var(--brand-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.atur-btn-primary:hover {
+  background-color: var(--brand-hover);
+}
+.atur-btn-primary:active {
+  transform: scale(0.99);
+}
+
+.atur-btn-primary-compact {
+  height: 50px;
+}
+
+/* --- Social Buttons (3-Column Horizontal Icon Grid) --- */
+.atur-social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.atur-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 54px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+}
+.atur-social-btn:active {
+  transform: scale(0.98);
+}
+
+.atur-social-google {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: #334155;
+}
+.atur-social-google:hover {
+  background-color: #F8FAFC;
+  border-color: #CBD5E1;
+}
+
+.atur-social-facebook {
+  background-color: #1877F2;
+  border: 1px solid #1877F2;
+  color: #FFFFFF;
+}
+.atur-social-facebook:hover {
+  background-color: #166FE5;
+}
+
+.atur-social-apple {
+  background-color: #000000;
+  border: 1px solid #000000;
+  color: #FFFFFF;
+}
+.atur-social-apple:hover {
+  background-color: #18181B;
+}
+
+/* --- Divider 'atau' --- */
+.atur-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.atur-divider-line {
+  flex-grow: 1;
+  border-top: 1px solid #E2E8F0;
+}
+.atur-divider-text {
+  flex-shrink: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 14px;
+  color: #94A3B8;
+}
+
+/* --- Landing Feature Cards --- */
+.atur-feature-card {
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+.atur-feature-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* --- Landing About Banner --- */
+.atur-about-box {
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .atur-about-box {
+    padding: 3.5rem;
+  }
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
